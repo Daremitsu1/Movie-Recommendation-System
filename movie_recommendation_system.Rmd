@@ -1,0 +1,43 @@
+---
+title: "Movie Recommendation System"
+author: "Aviparna Biswas"
+output: html_notebook
+---
+
+### 0. Dataset
+
+In order to build our recommendation system, we have used the MovieLens Dataset. It consists of two files movies.csv and ratings.csv. This data consists of 105339 ratings applied over 10329 movies.
+
+### 1. Importing Essential Libraries
+
+```{r}
+
+library(recommenderlab)
+
+```
+
+```{r}
+library(ggplot2)
+library(data.table)
+library(reshape2)
+```
+
+### 2. Retrieving the Data
+
+We will now retrieve our data from movies.csv into movie_data dataframe and ratings.csv into rating_data. We will use the str() function to display information about the movie_data dataframe.
+
+```{r}
+movie_data <- read.csv("movies.csv",stringsAsFactors=FALSE)
+rating_data <- read.csv("ratings.csv")
+str(movie_data)
+```
+
+#### 2.1 Checking the data
+
+```{r}
+summary(movie_data)
+```
+```{r}
+head(movie_data)
+```
+
